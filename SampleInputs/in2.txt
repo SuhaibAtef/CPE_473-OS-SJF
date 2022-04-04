@@ -1,0 +1,13 @@
+5
+A 0	4
+B 1	2
+C 2	8
+D 3	1
+E 4	9
+
+ADBCE
+A: (response=0, turnaround=4, delay=0)
+B: (response=4, turnaround=6, delay=4)
+C: (response=5, turnaround=13, delay=5)
+D: (response=1, turnaround=2, delay=1)
+E: (response=11, turnaround=20, delay=11)

@@ -1,0 +1,12 @@
+4
+A 2 3
+B 0 4
+D 5 4
+C 4 2
+
+
+BCAD
+B: (response=0, turnaround=4, delay=0)
+A: (response=4, turnaround=7, delay=4)
+C: (response=0, turnaround=2, delay=0)
+D: (response=4, turnaround=8, delay=4)

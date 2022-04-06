@@ -1,3 +1,10 @@
+5
+A 0 1
+C 5 4
+B 4 6
+D 6 5
+E 8 2
+
 ABECD
 A: (response=0, turnaround=1, delay=0)
 B: (response=0, turnaround=6, delay=0)

@@ -84,16 +84,20 @@ void SJF(vector<Process> Parr)
     sort(Parr.begin(),Parr.end(),compareProcessAT); //Sorting the vector array based on the arriving time.
     string orderList=""; //the first line output.
     int z =0; // time or endTime summation variable. or you can say a summation of process times.
-
+    
     // this is how SJF works //
 
     while(s.size()<Parr.size()){
+
     vector<Process> vec; 
     //a loop to get all process from the first until first + z time 
     for (auto i = Parr.begin(); (*i).getAT() <= (*Parr.begin()).getAT()+z; ++i){
         if(vec.size()<Parr.size()){
         vec.push_back((*i));
+        if(vec.size()==s.size()&&(*(i+1)).getAT()>(*Parr.begin()).getAT()+z)
+            z++;
         }else{
+            
             break;
         }
     }

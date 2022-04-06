@@ -1,0 +1,13 @@
+5
+A 0 3
+C 4 4
+B 2 6
+D 6 5
+E 8 2
+
+ABECD
+A: (response=0, turnaround=3, delay=0)
+B: (response=1, turnaround=7, delay=1)
+C: (response=7, turnaround=11, delay=7)
+D: (response=9, turnaround=14, delay=9)
+E: (response=1, turnaround=3, delay=1)

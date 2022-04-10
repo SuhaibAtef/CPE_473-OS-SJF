@@ -127,9 +127,12 @@ void SJF(vector<Process> Parr)
         ++j;
     }
     /*printing the solution*/
-    cout<<orderList<<endl;
+    ofstream myfile;
+    myfile.open("out.txt");
+    myfile<<orderList<<endl;
     sort(ansVec.begin(),ansVec.end(),compareProcessAT);
     for (auto i = ansVec.begin(); i != ansVec.end(); ++i){
-        cout<<(*i).getName()<<": (response="<<(*i).cResponseTime()<<", turnaround="<<(*i).cTurnaroundTime()<<", delay="<<(*i).cDelay()<<")"<<endl;
+        myfile<<(*i).getName()<<": (response="<<(*i).cResponseTime()<<", turnaround="<<(*i).cTurnaroundTime()<<", delay="<<(*i).cDelay()<<")"<<endl;
     }
+    myfile.close();
 }

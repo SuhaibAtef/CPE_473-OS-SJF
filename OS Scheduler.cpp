@@ -6,14 +6,17 @@ using namespace std;
 
 // main() is where program execution begins.
 int main() {
+    ifstream indata;
+    indata.open("in.txt");
     vector <Process> Parr;
     int N,AT,PT;
-    cin>>N;
+    indata>>N;
     char n;
     for(int i=0;i<N;i++){
-       cin>>n>>AT>>PT;
+       indata>>n>>AT>>PT;
        Parr.push_back(Process(n,AT,PT)); 
     }
+    indata.close();
     SJF(Parr);
     return 0;
 }

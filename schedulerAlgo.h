@@ -82,8 +82,10 @@ void SJF(vector<Process> Parr)
 {   unordered_set <char> s; //unordered_set for the solution of the algorithm;
     vector<int> endTimes;   //endTimes to hold the values of endTime :we don't need one for startTime because of how SJF works.
     sort(Parr.begin(),Parr.end(),compareProcessAT); //Sorting the vector array based on the arriving time.
+    
     string orderList=""; //the first line output.
-    int z =0; // time or endTime summation variable. or you can say a summation of process times.
+    //int z =0;
+    int z =Parr[0].getAT(); // time or endTime summation variable. or you can say a summation of process times.
     
     // this is how SJF works //
 
@@ -91,10 +93,10 @@ void SJF(vector<Process> Parr)
 
     vector<Process> vec; 
     //a loop to get all process from the first until first + z time 
-    for (auto i = Parr.begin(); (*i).getAT() <= (*Parr.begin()).getAT()+z; ++i){
+    for (auto i = Parr.begin(); (*i).getAT() <= z; ++i){
         if(vec.size()<Parr.size()){
         vec.push_back((*i));
-        if(vec.size()==s.size()&&(*(i+1)).getAT()>(*Parr.begin()).getAT()+z)
+        if(vec.size()==s.size()&&(*(i+1)).getAT()>z)
             z++;
         }else{
             
@@ -118,7 +120,7 @@ void SJF(vector<Process> Parr)
     }
     vector<Process> ansVec=getAns(s,Parr); // turn set to vector. 
 
-    /* itterate throught the vector to set endTimes*/
+    /* iterate throught the vector to set endTimes*/
     auto j = endTimes.begin();
     for (auto i = ansVec.end()-1; i != ansVec.begin()-1; --i){
         orderList+=(*i).getName();
